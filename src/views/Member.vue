@@ -1,7 +1,7 @@
 <template lang="pug">
 b-container.mt-5#member
   b-col.border-l
-    h5 會員資料修改
+    h5 個人資料修改
   b-container.rounded.border.mb-5
     b-row.justify-content-center
       b-col.mt-5(cols="10 col-lg-10")
