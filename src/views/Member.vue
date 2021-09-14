@@ -137,6 +137,7 @@ export default {
       console.log(data)
       this.form.account = data.result.account
       this.form.email = data.result.email
+      this.form.phonenumber = data.result.phonenumber
       console.log(this.form)
       return data
     } catch (error) {
