@@ -126,6 +126,28 @@ export default {
         })
       }
     }
+  },
+  async mounted () {
+    try {
+      const { data } = await this.axios.get('/users', {
+        headers: {
+          authorization: 'Bearer ' + this.$store.state.jwt.token
+        }
+      })
+      console.log(data)
+      this.form.account = data.result.account
+      this.form.email = data.result.email
+      this.form.phonenumber = data.result.phonenumber
+      console.log(this.form)
+      return data
+    } catch (error) {
+      console.log(error)
+      this.$swal({
+        icon: 'error',
+        title: '錯誤',
+        text: '取得會員資料失敗'
+      })
+    }
   }
 }
 </script>
